@@ -4,11 +4,13 @@
   "description": "manage github lable automatically",
   "main": "index.js",
   "bin": {
-    "ghlbl": "./index.js" 
+    "ghlbl": "./index.js"
   },
   "scripts": {
     "pretest": "jshint lib index.js",
-    "test": "mocha test/*.test.js"
+    "test": "mocha test/*.test.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -26,12 +28,14 @@
   "dependencies": {
     "commander": "^2.9.0",
     "debug": "^2.2.0",
-    "request-promise": "^3.0.0"
+    "request-promise": "^3.0.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "jshint": "^2.9.2",
     "mocha": "^2.4.5",
     "nock": "^8.0.0"
-  }
+  },
+  "snyk": true
 }
